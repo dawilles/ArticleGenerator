@@ -11,7 +11,7 @@ const openaiClient = async (prompt) => {
     };
 
     const data = {
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4o',
         messages: [{ role: 'user', content: prompt }],
     };
 
@@ -24,5 +24,4 @@ const openaiClient = async (prompt) => {
         throw error;
     }
 };
-
 module.exports = openaiClient;

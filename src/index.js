@@ -10,15 +10,29 @@ const generateHtmlArticle = async () => {
         const articleContent = fs.readFileSync(ARTICLE_PATH, 'utf-8');
 
         const prompt = `
-Transform the following article into well-structured HTML content using appropriate tags.
-Identify suitable places to insert images; mark them with <img src="image_placeholder.jpg" alt="Detailed prompt for image generation">.
-Provide alt attributes with detailed prompts for image generation.
-Include captions under images using the appropriate HTML tags.
-Do not include any CSS or JavaScript.
-Return only the content to be placed between <body> and </body> tags.
-Do not include <html>, <head>, or <body> tags.
+Wygeneruj kod dla artykułu w języku polskim zgodnie z poniższymi wymaganiami:
 
-Article:
+1. Struktura:
+   - Zwrócona zawartość powinien zawierać wyłącznie to co do wstawienia pomiędzy tagami <body> i </body> i nic poza tym. W odpowiedzi tylko tekst, brak backticks.
+   - Używaj semantycznych tagów HTML5 (article, section, header itp.)
+   - Zachowaj hierarchię nagłówków
+   - Grupuj powiązane treści w sekcje
+
+2. Obrazy:
+   - Umieść <img> w miejscach wspierających narrację
+   - Alt teksty powinny zawierać: 
+     * Szczegółowy opis sceny
+     * Styl grafiki (np. ilustracja, fotografia)
+     * Kluczowe elementy do wygenerowania
+   - Użyj src="image_placeholder.jpg"
+   - Dodaj <figcaption> z krótkim, kontekstowym opisem
+
+3. Formatowanie:
+   - Użyj paragrafów <p> dla tekstu
+   - Zachowaj oryginalną strukturę akapitów
+   - Nie dodawaj CSS ani JavaScript
+
+Artykuł:
 ${articleContent}
     `;
 
@@ -31,4 +45,10 @@ ${articleContent}
     }
 };
 
-generateHtmlArticle();
+generateHtmlArticle()
+    .then(() => {
+        console.log('Article generated successfully.');
+    })
+    .catch((error) => {
+        console.error('Error generating article:', error);
+    });
