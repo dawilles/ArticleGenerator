@@ -11,13 +11,11 @@ const generateHtmlArticle = async () => {
 
         const prompt = `
 Wygeneruj kod dla artykułu w języku polskim zgodnie z poniższymi wymaganiami:
-
 1. Struktura:
    - Zwrócona zawartość powinien zawierać wyłącznie to co do wstawienia pomiędzy tagami <body> i </body> i nic poza tym. W odpowiedzi tylko tekst, brak backticks.
    - Używaj semantycznych tagów HTML5 (article, section, header itp.)
    - Zachowaj hierarchię nagłówków
    - Grupuj powiązane treści w sekcje
-
 2. Obrazy:
    - Umieść <img> w miejscach wspierających narrację
    - Alt teksty powinny zawierać: 
@@ -26,12 +24,10 @@ Wygeneruj kod dla artykułu w języku polskim zgodnie z poniższymi wymaganiami:
      * Kluczowe elementy do wygenerowania
    - Użyj src="image_placeholder.jpg"
    - Dodaj <figcaption> z krótkim, kontekstowym opisem
-
 3. Formatowanie:
    - Użyj paragrafów <p> dla tekstu
    - Zachowaj oryginalną strukturę akapitów
    - Nie dodawaj CSS ani JavaScript
-
 Artykuł:
 ${articleContent}
     `;
