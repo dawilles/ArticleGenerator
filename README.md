@@ -23,7 +23,7 @@ Aplikacja dodatkowo umożliwia podgląd wygenerowanego artykułu za pomocą szab
 1. **Sklonuj repozytorium**:
    ```bash
    git clone <URL_REPOZYTORIUM>
-   cd project-root
+   cd ArticleGenerator
    ```
 
 2. **Zainstaluj zależności**:
@@ -61,7 +61,7 @@ Aplikacja dodatkowo umożliwia podgląd wygenerowanego artykułu za pomocą szab
 
 ## Struktura Plików
 
-- **`src/openaiClient.js`**: Funkcja obsługująca komunikację z API OpenAI.
+- **`src/completeChat.js`**: Funkcja obsługująca komunikację z API OpenAI.
 - **`src/index.js`**: Główny plik aplikacji, realizujący logikę działania.
 - **`output/szablon.html`**: Szablon HTML z załączonym Tailwind CSS do stylizacji.
 - **`output/podglad.html`**: Plik z pełnym podglądem wygenerowanego artykułu.
