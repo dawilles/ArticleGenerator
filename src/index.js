@@ -2,9 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const openaiClient = require('./openaiClient');
 
+// Ścieżki do plików wejściowych i wyjściowych
 const ARTICLE_PATH = path.join(__dirname, '../data/article.txt');
 const OUTPUT_PATH = path.join(__dirname, '../output/artykul.html');
 
+// Funkcja generująca artykuł HTML
 const generateHtmlArticle = async () => {
     try {
         const articleContent = fs.readFileSync(ARTICLE_PATH, 'utf-8');
@@ -41,6 +43,7 @@ ${articleContent}
     }
 };
 
+// Uruchomienie funkcji generującej artykuł
 generateHtmlArticle()
     .then(() => {
         console.log('Article generated successfully.');
