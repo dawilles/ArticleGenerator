@@ -1,6 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 
+// Funkcja komunikująca się z API OpenAI
 const openaiClient = async (prompt) => {
     const apiKey = process.env.OPENAI_API_KEY;
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
